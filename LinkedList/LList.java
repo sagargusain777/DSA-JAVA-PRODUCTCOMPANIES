@@ -82,6 +82,17 @@ class LList {
 
     }
 
+    // Delete at first in Linked List
+    public void deleteFirst() {
+        if (head == null) {
+            return;
+        }
+
+        head = head.next;
+        size--;
+
+    }
+
     // Displaying the Linked List
     public void display() {
         Node temp = head;
