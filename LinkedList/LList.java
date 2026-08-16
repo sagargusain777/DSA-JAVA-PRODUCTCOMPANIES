@@ -58,6 +58,30 @@ class LList {
 
     }
 
+    // Insertion at Nth index
+    public void insert(int value, int index) {
+        if (index == 0) {
+            insertFirst(value);
+            return;
+        }
+        if (index == size) {
+            insertLast(value);
+            return;
+
+        }
+
+        Node temp = head;
+        for (int i = 1; i < index; i++) {
+            temp = temp.next;
+
+        }
+        Node node = new Node(value);
+        node.next = temp.next;
+        temp.next = node;
+        size++;
+
+    }
+
     // Displaying the Linked List
     public void display() {
         Node temp = head;
@@ -68,7 +92,7 @@ class LList {
 
         }
 
-        System.out.print("END");
+        System.out.println("END");
 
     }
 
