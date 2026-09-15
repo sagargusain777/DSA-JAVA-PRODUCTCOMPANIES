@@ -84,11 +84,28 @@ class LList {
 
     // Delete at first in Linked List
     public void deleteFirst() {
+
         if (head == null) {
+            System.out.println("The Linked List is Empty");
             return;
         }
-
         head = head.next;
+        size--;
+        if (head == null) {
+            tail = null;
+        }
+
+    }
+
+    // Delet Last From Linked List
+    public void deleteLast() {
+
+        Node temp = head;
+        for (int i = 1; i < size; i++) {
+            temp = temp.next;
+        }
+        temp.next = null;
+        tail = temp;
         size--;
 
     }
